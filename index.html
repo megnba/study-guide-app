@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Study Hub 🌟</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f0f8ff; /* Light, calming background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h1, h2 {
+            color: #2e8b57; /* Sea green for a touch of nature */
+            border-bottom: 3px solid #8fbc8f; /* Light sea green accent */
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #categories-section,
+        #add-category-section,
+        #study-notes-section,
+        #quiz-section {
+            margin-top: 35px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        #categories-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #categories-list li {
+            background-color: #e0eee0; /* Pale green for list items */
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 6px solid #3cb371; /* Medium sea green accent */
+            font-weight: bold;
+        }
+
+        #add-category-form input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-right: 15px;
+            width: 65%;
+            box-sizing: border-box;
+        }
+
+        #add-category-form button {
+            padding: 10px 20px;
+            background-color: #4682b4; /* Steel blue for the button */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        #add-category-form button:hover {
+            background-color: #2e648b;
+        }
+
+        #study-notes-section textarea {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit; /* Use the body font */
+            font-size: 1em;
+            min-height: 150px;
+        }
+
+        #quiz-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #quiz-section li {
+            padding: 12px;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        #quiz-section li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Personal Study Hub 🌟</h1>
+
+        <section id="categories-section">
+            <h2>My Interests & Studies 📌</h2>
+            <ul id="categories-list">
+                <li>Bible Study 📖</li>
+                <li>Marketing 📈</li>
+                <li>Project Management 🗓️</li>
+                <li>User Experience Design (UXD) 🎨</li>
+            </ul>
+        </section>
+
+        <section id="add-category-section">
+            <h2>Add a New Area of Focus ➕</h2>
+            <form id="add-category-form">
+                <input type="text" id="new-category-name" placeholder="New Category Name">
+                <button type="button" onclick="addCategory()">Add It!</button>
+            </form>
+        </section>
+
+        <section id="study-notes-section">
+            <h2>Jot Down Your Thoughts 📝</h2>
+            <textarea placeholder="Capture your insights and notes here..."></textarea>
+        </section>
+
+        <section id="quiz-section">
+            <h2>Test Your Knowledge! 🧠</h2>
+            <ul>
+                <li>Question related to one of your categories will appear here.</li>
+                <li>(This section will become interactive later!)</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const categoriesList = document.getElementById('categories-list');
+        const newCategoryInput = document.getElementById('new-category-name');
+
+        function addCategory() {
+            const newCategoryText = newCategoryInput.value.trim();
+            if (newCategoryText !== "") {
+                const listItem = document.createElement('li');
+                listItem.textContent = newCategoryText + ' ➕';
+                categoriesList.appendChild(listItem);
+                newCategoryInput.value = ""; // Clear the input field
+            }
+        }
+    </script>
+</body>
+</html>
